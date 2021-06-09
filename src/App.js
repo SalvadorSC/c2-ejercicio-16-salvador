@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { cabecera } from "./components/Cabecera";
+import { asideMenu } from "./components/AsideMenu";
+import { cuerpoNoticia } from "./components/noticiaPrincipal";
+import { footer } from "./components/Footer";
 
 function App() {
+  const titular = "Titular de la noticia";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div class="contenido-general">
+        {cabecera}
+        <main class="contenido-principal">
+          <section class="noticia-principal">
+            <h2>{titular}</h2>
+            {cuerpoNoticia}
+          </section>
+          {asideMenu}
+        </main>
+        {footer}
+      </div>
+    </>
   );
 }
 
